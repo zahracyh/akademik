@@ -2,7 +2,7 @@
     <form action="/pemograman-web/akademik/proses.php" method="post">
         <div class="mb-3">
                 <label for="nama_prodi" class="form-label">Nama Program Studi</label>
-                <input type="text" class="form-control" id="nama_prodi" name="nama_prodi">
+                <input type="text" class="form-control" id="nama_prodi" name="nama_prodi" required>
         </div>
         <div class="mb-3">
                 <label for="jenjang" class="form-label">Jenjang</label>
@@ -21,7 +21,7 @@
         <div>
             <input type="submit" name="prodi_submit" class="btn btn-secondary">
             <input type="reset" name="reset" class="btn btn-secondary">
-                <a href='index.php?page=prodi' class="btn btn-info">Lihat data</a>
+                <a href='index.php?page=prodi' class="btn btn-info">Lihat data prodi</a>
         </div>
     </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

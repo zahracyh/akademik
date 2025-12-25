@@ -1,8 +1,8 @@
     <h1 class='text-center'>List Data Mahasiswa</h1>
         <a href='index.php?page=mahasiswa_create' class="btn btn-primary">+ tambah data</a>
         <br><br>
-    <table class="table table-bordered">
-            <thead>
+    <table class="table table-bordered border-dark">
+            <thead class="table-primary text-center">
             <tr>
                 <th scope="col">No</th>
                 <th scope="col">NIM</th>
@@ -23,7 +23,7 @@
                 //-> merupakan tanda object
                 while($data = mysqli_fetch_assoc($tampil)){
             ?>  
-                    <tr>
+                    <tr class="text-center">
                         <th scope="row"><?= $no ?></th>
                         <td><?= $data['nim'] ?></td>
                         <td><?= $data['nama_mhs'] ?></td>
@@ -31,8 +31,8 @@
                         <td><?= $data['nama_prodi'] ?></td>
                         <td><?= $data['alamat'] ?></td>
                         <td>
-                            <a href="proses.php?mhs_hapus=<?php echo $data['nim'] ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?');">Hapus</a>
-                            <a href="index.php?nim=<?= $data['nim'] ?>&page=mahasiswa_update" class="btn btn-warning">Edit</a>
+                            <a href="proses.php?mhs_hapus=<?php echo $data['nim'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data ini?');">Hapus</a>
+                            <a href="index.php?nim=<?= $data['nim'] ?>&page=mahasiswa_update" class="btn btn-warning btn-sm">Edit</a>
                         </td>
                     </tr>
             

@@ -1,3 +1,14 @@
+<?php
+    //session --> disimpan diserver | cookies--> disimpan di web
+
+    session_start();
+    //cek login sudah ada atau belum
+    if(!isset($_SESSION['login']))
+    {
+        header("Location: login.php");
+    }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,7 +25,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
@@ -23,6 +34,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?page=prodi">Program Studi</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                         <a href="logout.php" onclick="return confirm('Yakin ingin logout?')" class="btn btn-outline-danger">Logout</a>
                     </li>
                 </ul>
             </div>
