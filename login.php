@@ -9,45 +9,49 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Login</h1> <br>
-        <form action="" method="post">
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input name= "email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input name= "password" type="password" class="form-control" id="exampleInputPassword1" required>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-        </form>
-        <?php
-        if(isset($_POST['email'])){
-            $email = $_POST['email'];
-            $pass = md5($_POST['password']);
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card p-4" style="width: 350px;">
+            <h4 class="text-center">Login</h4> <br>
+                <form action="" method="post">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input name= "email" type="email" class="form-control" id="exampleInputEmail1" placeholder="masukkan email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input name= "password" type="password" class="form-control" id="exampleInputPassword1" placeholder="masukkan password" required>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                    <p class="text-center mt-3"> Belum punya akun?<a href="register.php" class="fw-bold text-primary text-decoration-none"> Daftar disini</a></p>
+                </form>
+        
+                <?php
+                    if(isset($_POST['email']))
+                        {
+                            $email = $_POST['email'];
+                            $pass = md5($_POST['password']);
 
-            require 'koneksi.php';
-            //cek credentials user
-            $ceklogin = "SELECT * FROM pengguna WHERE email='$email' AND password='$pass'";
-            $result = $koneksi->query($ceklogin);
+                            require 'koneksi.php';
+                            //cek login pengguna
+                            $ceklogin = "SELECT * FROM pengguna WHERE email='$email' AND password='$pass'";
+                            $result = $koneksi->query($ceklogin);
 
-            if ($result->num_rows> 0) {
-                //echo "login berhasil";
-                session_start();
-                $_SESSION['login'] = TRUE;
-                $_SESSION['email'] = $email;
-                header("Location: index.php");
-            } else {
-                echo "Login gagal";
-            }
-        }
-        ?>
+                            if ($result->num_rows> 0) {
+                                //echo "login berhasil";
+                                session_start();
+                                $_SESSION['login'] = TRUE;
+                                $_SESSION['email'] = $email;
+                                header("Location: index.php");
+                            } else {
+                                echo "Login gagal";
+                            }
+                        }
+                ?>
+        </div>
     </div>
 </body>
 </html>

@@ -16,27 +16,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>List Data Mahasiswa</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-info">
         <div class="container">
-            <a class="navbar-brand" href="#"><h3>Akademik</h3></a>
+            <a class="navbar-brand fs-5 fw-bold" href="#"><i class="fa-solid fa-graduation-cap"></i>Akademik</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link text-dark" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=mahasiswa">Data Mahasiswa</a>
+                        <a class="nav-link text-dark" href="index.php?page=mahasiswa">Data Mahasiswa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=prodi">Program Studi</a>
+                        <a class="nav-link text-dark" href="index.php?page=prodi">Program Studi</a>
                     </li>
-                    <li class="nav-item ms-3">
-                         <a href="logout.php" onclick="return confirm('Yakin ingin logout?')" class="btn btn-outline-danger">Logout</a>
+                </ul>
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                    <a class="nav-link fw-bold text-dark" href="editprofile.php"><i class="fa-solid fa-user-pen"></i> Edit Profile</a>
+                    </li>
+                    <li class="nav-item ms-3  ms-auto">
+                         <a href="logout.php" onclick="return confirm('Yakin ingin logout?')" class="btn btn-outline-danger fw-bold"><i class="fa-solid fa-right-from-bracket me-1"></i>Logout</a>
                     </li>
                 </ul>
             </div>
